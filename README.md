@@ -1,5 +1,5 @@
 
-# Stability, Trust, and Cohesion is the only option forward
+# Scratching the surface of social cohesion
  
 ## Purpose: This data serves Economists, Government agencies and Non-governmental agencies both within the country and outside as a baseline for level of risk.  Without this kind of data governments may have a delayed response to the urgent needs of their nation. This is also a useful resource to organizations that provide intervention services both within their country and internationally. It’s especially important to predict potential volatility.
 What makes a cohesive nation? 
