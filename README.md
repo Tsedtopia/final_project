@@ -1,10 +1,10 @@
-# final_project
-### Stability, Trust, and Cohesion is the only option forward
+
+# Stability, Trust, and Cohesion is the only option forward
  
-# Purpose: This data serves Economists, Government agencies and Non-governmental agencies both within the country and outside as a baseline for level of risk.  Without this kind of data governments may have a delayed response to the urgent needs of their nation. This is also a useful resource to organizations that provide intervention services both within their country and internationally. It’s especially important to predict potential volatility.
+## Purpose: This data serves Economists, Government agencies and Non-governmental agencies both within the country and outside as a baseline for level of risk.  Without this kind of data governments may have a delayed response to the urgent needs of their nation. This is also a useful resource to organizations that provide intervention services both within their country and internationally. It’s especially important to predict potential volatility.
 What makes a cohesive nation? 
 How is social cohesion measured?  In my dataset there are 12 indicators identified in the Fragile State Index, and each of them have an assigned value for each of the 178 countries. The nations are ranked with #1 being the least cohesive least stable country, and 178 as the most stable most cohesive country. 
-# 12 Indicators:
+## 12 Indicators:
 ●	C1: Security Apparatus
 ●	C2: Factionalized Elites
 ●	C3: Group Grievance
@@ -18,7 +18,7 @@ How is social cohesion measured?  In my dataset there are 12 indicators identifi
 ●	S2: Refugees & IDPs Internally Displaced Persons
 ●	X1: External Intervention
 
-# The methodology used to construct the data was headed by Fund for Peace. Data analysts triangulated three different data streams to measure the 12 indicators using 1) primary data from the World Bank and UNHCR – United Nations High Commissions for Refugees, etc. 2) Content analysis of millions of online public documents using Boolean search strings to flag sharp changes from one country to the next, and 3) qualitative assessment. The approach taken is to scale and normalize the individual metrics and then integrate with weighted averages. 
+## The methodology used to construct the data was headed by Fund for Peace. Data analysts triangulated three different data streams to measure the 12 indicators using 1) primary data from the World Bank and UNHCR – United Nations High Commissions for Refugees, etc. 2) Content analysis of millions of online public documents using Boolean search strings to flag sharp changes from one country to the next, and 3) qualitative assessment. The approach taken is to scale and normalize the individual metrics and then integrate with weighted averages. 
 
 
 
@@ -26,7 +26,7 @@ For the qualitative component, two separate teams of analysts independently cond
 Finally the three data streams are compared to see if they generate the same outcome, and triangulated to arrive at a reconciled score.
 The methodology was pretty consistent for each year, beginning with 147 countries in 2006 and expanding to a total of 178 countries on their current list.
 
-# My testing method: Supervised ML, Regression & Linear Regression. 
+## My testing method: Supervised ML, Regression & Linear Regression. 
 Keras sequential, nn-model, deep-model, and linear regression
 ●	Results for target metric Fractionalized Elites
 ○	Nn model: R² value for y_train = .76 and y_test = .66
