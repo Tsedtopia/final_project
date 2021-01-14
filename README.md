@@ -20,7 +20,7 @@ How is social cohesion measured?  In my dataset there are 12 indicators identifi
 
 ## The methodology used to construct the data was headed by Fund for Peace. Data analysts triangulated three different data streams to measure the 12 indicators using 1) primary data from the World Bank and UNHCR – United Nations High Commissions for Refugees, etc. 2) Content analysis of millions of online public documents using Boolean search strings to flag sharp changes from one country to the next, and 3) qualitative assessment. The approach taken is to scale and normalize the individual metrics and then integrate with weighted averages. 
 
-
+![Methodology](/images/logo.png)
 
 For the qualitative component, two separate teams of analysts independently conduct a qualitative analysis to assess, based on major events, whether the country indicator scores got better, worse, or stayed the same.  The qualitative analysis is done twice, by two different sets of analysts with a firewall between them, to reduce bias and fill gaps.
 Finally the three data streams are compared to see if they generate the same outcome, and triangulated to arrive at a reconciled score.
@@ -34,9 +34,11 @@ Keras sequential, nn-model, deep-model, and linear regression
 ●	The results were slightly varied due to the nature of the algorithm but the accuracy scores are around 82% across different indicators. 
 P-value – testing the null hypothesis
  
+![p-value_outcome_sample](/images/logo.png) 
 Libaries: Pandas, Numpy, Tensorflow, Sklearn (preprocessing, model_slection, metrics, linear model, and matplotlib.
 
 Import Tableau Animation - 
+![Data Viz _ fragile state index Correlations based on P-Values](/images/logo.png)
 
 Challenges and Difficulties Encountered: The data was pretty clean but interpreting and finding the most influential and most correlated indicators took a little maneuvering. The Indicators that were most correlated were C3: Grievances, X1: External Intervention, C2: Factionalized Elites, S2: Refugees and IDPs, and P1: State Legitimacy. It would be interesting to compare a test and train sample for public documents in the languages of the countries being analyzed. 
 
