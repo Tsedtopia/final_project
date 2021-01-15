@@ -133,8 +133,38 @@ X_train_scaled = scaler.transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 X_train.head()
-
 ![](train_head.png)
+
+nn_model = tf.keras.models.Sequential()
+nn_model.add(tf.keras.layers.Dense(units=len(X.columns) * 2, activation = "relu", input_dim = len(X.columns)))
+nn_model.add(tf.keras.layers.Dense(units=1, activation="linear"))
+nn_model.summary()
+
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 24)                312       
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 25        
+=================================================================
+Total params: 337
+Trainable params: 337
+Non-trainable params: 0
+
+nn_model.compile(loss="mean_squared_error", optimizer="adam")
+nn_model.fit(X_train_scaled, np.asarray(y_train), epochs=100)
+Epoch 100/100
+125/125 [==============================] - 0s 343us/step - loss: 0.9935
+<tensorflow.python.keras.callbacks.History at 0x1965c7f4b20>
+y_train_pred = nn_model.predict(X_train_scaled)
+y_test_pred = nn_model.predict(X_test_scaled)
+r2_score(y_train, y_train_pred)
+0.760254447127044
+r2_score(y_test, y_test_pred)
+0.7534609188169502
+#scatter plot
+![](scatter_plot_C3.png)
 
 DASHBOARD
 Tableau Animation - 2006 to 2020 data 
