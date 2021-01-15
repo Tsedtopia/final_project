@@ -52,7 +52,7 @@ Social Cohesion defined - the absence of polarization and division. 'Stable' or 
 Which indicators are most correlated?
 Are Countries with a low rating of E1: Economic Decline & Poverty likely to have minimal grievances and human rights violations?
 
-#Extracting, Transforming, and Loading
+# Extracting, Transforming, and Loading
 
 The data sheets provided were organized by year and the first python notebook was based on the fsi-2020 excell data.  However, I merged the years and created an excell sheet that compiled all years 2006 - 2020
 
