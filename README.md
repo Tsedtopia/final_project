@@ -124,7 +124,7 @@ X1: External Intervention
 
 Libaries: Pandas, Numpy, Tensorflow, Sklearn (preprocessing, model_slection, metrics, linear model, and matplotlib.
 
-social_cohesion_C3
+# social_cohesion_C3 (Notebook 4)
 #Create category_columns and numeric_columns variables
 X = df.drop(['Country', 'Rank','Year','Total', 'C3: Group Grievance'], axis=1)
 X 
