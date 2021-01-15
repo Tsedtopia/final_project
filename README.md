@@ -35,6 +35,7 @@ Keras sequential, nn-model, deep-model, and linear regression
 P-value – testing the null hypothesis
 
 ![](p-value_outcome_sample.png)
+
 Libaries: Pandas, Numpy, Tensorflow, Sklearn (preprocessing, model_slection, metrics, linear model, and matplotlib.
 
 Tableau Animation - 
