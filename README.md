@@ -222,3 +222,10 @@ stats.summary(ols, X_train, y_train, X.columns)
 
 Challenges and Difficulties Encountered: The data was pretty clean but interpreting and finding the most influential and most correlated indicators took a little maneuvering. The Indicators that were most correlated were C3: Grievances, X1: External Intervention, C2: Factionalized Elites, S2: Refugees and IDPs, and P1: State Legitimacy. It would be interesting to compare a test and train sample for public documents in the languages of the countries being analyzed. 
 
+# Conclusions
+Understanding the data source is critical to how confident I can be about the conclusion and story that I wish to draw upon.
+Although I find the metrics that they have selected to be superior. It’s a bit puzzling to analyze all of these nations based on one or three languages. There are 178 countries, and to have a better understanding of social cohesion more data needs to be collected in these different languages. A part of accurately measuring social cohesion should include the way a nations sees themself. For budget reasons maybe select 5 countries to start collecting data.
+Lessons Learned - Always consider language (not necessairly computer language) and cultural context when analyzing data. 
+
+# What will I do next?
+I would like to do a comparative review of the data over the past 10 years and then select certain countries that have experienced polarization and decline of social cohesion resulting in some level of genoicde and analyze what kind of  news reports were published both international news agencies and within the country.
