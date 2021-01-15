@@ -2,29 +2,55 @@
 # Scratching the surface of social cohesion
  
 ## Purpose: This data serves Economists, Government agencies and Non-governmental agencies both within the country and outside as a baseline for level of risk.  Without this kind of data governments may have a delayed response to the urgent needs of their nation. This is also a useful resource to organizations that provide intervention services both within their country and internationally. It’s especially important to predict potential volatility.
+
+## Why I chose this topic?
+Timeliness 
+This has been a topic of interest to me, for a while. I experience and see the world differently from a young age I have had to balance two very different worldviews, and the two countries that have shaped my identity happen to be experiencing a heightened level of social and political polarization at this time – especially in 2020.  
+
 What makes a cohesive nation? 
 How is social cohesion measured?  In my dataset there are 12 indicators identified in the Fragile State Index, and each of them have an assigned value for each of the 178 countries. The nations are ranked with #1 being the least cohesive least stable country, and 178 as the most stable most cohesive country. 
 ## 12 Indicators:
-●	C1: Security Apparatus
-●	C2: Factionalized Elites
-●	C3: Group Grievance
-●	E1: Economic Decline &Poverty
-●	E2: Uneven Economic Development
-●	E3: Human Flight & Brain Drain
-●	P1: State Legitimacy
-●	P2: Public Services
-●	P3: Human Rights & Rule of Law
-●	S1: Demographic Pressures
-●	S2: Refugees & IDPs Internally Displaced Persons
-●	X1: External Intervention
+●	C1: Security Apparatus -security threats to a state, such as bombings, attacks and battle-related deaths, rebel movements, mutinies, coups, or terrorism
 
-## The methodology used to construct the data was headed by Fund for Peace. Data analysts triangulated three different data streams to measure the 12 indicators using 1) primary data from the World Bank and UNHCR – United Nations High Commissions for Refugees, etc. 2) Content analysis of millions of online public documents using Boolean search strings to flag sharp changes from one country to the next, and 3) qualitative assessment. The approach taken is to scale and normalize the individual metrics and then integrate with weighted averages. 
+●	C2: Factionalized Elites -fragmentation of state institutions along ethnic, class, clan, racial or religious lines, as well as and brinksmanship and gridlock between ruling elites.
+
+●	C3: Group Grievance - focuses on divisions and schisms between different groups in society – particularly divisions based on social or political characteristics – and their role in access to services or resources, and inclusion in the political process.
+
+●	E1: Economic Decline &Poverty - factors related to economic decline within a country
+ 
+●	E2: Uneven Economic Development - inequality within the economy, irrespective of the actual performance of an economy
+
+●	E3: Human Flight & Brain Drain - voluntary emigration of the middle class – particularly economically productive segments of the population, due to economic deterioration 
+
+●	P1: State Legitimacy - representativeness and openness of government and its relationship with its citizenry
+
+●	P2: Public Services - essential services, such as health, education, water and sanitation, transport infrastructure, electricity and power, and internet and connectivity
+
+●	P3: Human Rights & Rule of Law - fundamental human rights are protected and freedoms are observed and respected.
+The Indicator looks at whether there is widespread abuse of legal, political and social rights, including those of individuals, groups and institutions (e.g. harassment of the press, politicization of the judiciary, internal use of military for political ends, repression of political opponents
+
+●	S1: Demographic Pressures - measures population pressures related to food supply, access to safe water, and other life-sustaining resources, or health, such as prevalence of disease and epidemics
+
+●	S2: Refugees & IDPs Internally Displaced Persons - measures the pressure upon states caused by the forced displacement of large communities as a result of social, political, environmental or other causes, measuring displacement within countries, as well as refugee flows into others. 
+
+●	X1: External Intervention - focuses on security aspects of engagement from external actors, both covert and overt, in the internal affairs of a state at risk by governments, armies, intelligence services, identity groups, or other entities
+
+The owner of the data, Fund For Peace, an NGO has collected data on several countries and their data set spans from year 2006-2020 – they have covered a total of 15 years and will begin working on 2020 data to be published in the Spring of 2021. I wanted to understand how they collected their data. I needed more understanding about their primary data sources and their process. and I was able to reach Nate Haken, the Programs Director at Fund For Peace. He shared invaluable information that I wouldn’t have been able to obtain from just looking at the website. They have a unique set of data and I was excited to find this information that spans over a decade. Especially the content and factors that they analyzed were closely related to my topic of interest.
+
+In order to understand social cohesion you have to consider the opposite end of the spectrum, which is instability and polarization. Many of the indicators mentioned can be described as polarization metrics; cause & effects of polarization in a society. A large part of the data is captured by analyzing media coverage. 
+
+## Data Source: used to construct the data was headed by Fund for Peace. Data analysts triangulated three different data streams to measure the 12 indicators using 1) primary data from the World Bank and UNHCR – United Nations High Commissions for Refugees, etc. 2) Content analysis of millions of online public documents using Boolean search strings to flag sharp changes from one country to the next, and 3) qualitative assessment. The approach taken is to scale and normalize the individual metrics and then integrate with weighted averages. 
 
 ![](methodology.png)
 
 For the qualitative component, two separate teams of analysts independently conduct a qualitative analysis to assess, based on major events, whether the country indicator scores got better, worse, or stayed the same.  The qualitative analysis is done twice, by two different sets of analysts with a firewall between them, to reduce bias and fill gaps.
 Finally the three data streams are compared to see if they generate the same outcome, and triangulated to arrive at a reconciled score.
 The methodology was pretty consistent for each year, beginning with 147 countries in 2006 and expanding to a total of 178 countries on their current list.
+
+The hypothesis - Countries considered to be stable and have a ranking in the 170s have minimal grievances and minimal human rights violations. 
+Social Cohesion defined - the absence of polarization and division. 'Stable' or 'Very stable nations'.
+Which indicators are most correlated?
+Are Countries with a low rating of E1: Economic Decline & Poverty likely to have minimal grievances and human rights violations?
 
 #Extracting, Transforming, and Loading
 
@@ -80,6 +106,13 @@ Results for target metric Fractionalized Elites (primary target metric)
 ○	Deep model: R² value for y_train = .80 and y_test .70
 The results were slightly varied due to the nature of the algorithm but the average accuracy score across different indicators is 82%. 
 P-value – testing the null hypothesis
+
+# Findings
+
+Similar outcomes for both train and test. The indicators that were most corelated to Fractionalized elites were: P1: State Legitimacy and 
+C3: Group Grievance and 
+X1: External Intervention
+
 
 ![](p-value_outcome_sample.png)
 
