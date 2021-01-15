@@ -1,7 +1,7 @@
 
 # Scratching the surface of social cohesion
  
-## Purpose: This data serves Economists, Government agencies and Non-governmental agencies both within the country and outside as a baseline for level of risk.  Without this kind of data governments may have a delayed response to the urgent needs of their nation. This is also a useful resource to organizations that provide intervention services both within their country and internationally. It’s especially important to predict potential volatility.
+# Purpose: This data serves Economists, Government agencies and Non-governmental agencies both within the country and outside as a baseline for level of risk.  Without this kind of data governments may have a delayed response to the urgent needs of their nation. This is also a useful resource to organizations that provide intervention services both within their country and internationally. It’s especially important to predict potential volatility.
 
 ## Why I chose this topic?
 Timeliness 
@@ -39,7 +39,7 @@ The owner of the data, Fund For Peace, an NGO has collected data on several coun
 
 In order to understand social cohesion you have to consider the opposite end of the spectrum, which is instability and polarization. Many of the indicators mentioned can be described as polarization metrics; cause & effects of polarization in a society. A large part of the data is captured by analyzing media coverage. 
 
-## Data Source: used to construct the data was headed by Fund for Peace. Data analysts triangulated three different data streams to measure the 12 indicators using 1) primary data from the World Bank and UNHCR – United Nations High Commissions for Refugees, etc. 2) Content analysis of millions of online public documents using Boolean search strings to flag sharp changes from one country to the next, and 3) qualitative assessment. The approach taken is to scale and normalize the individual metrics and then integrate with weighted averages. 
+# Data Source: used to construct the data was headed by Fund for Peace. Data analysts triangulated three different data streams to measure the 12 indicators using 1) primary data from the World Bank and UNHCR – United Nations High Commissions for Refugees, etc. 2) Content analysis of millions of online public documents using Boolean search strings to flag sharp changes from one country to the next, and 3) qualitative assessment. The approach taken is to scale and normalize the individual metrics and then integrate with weighted averages. 
 
 ![](methodology.png)
 
