@@ -42,7 +42,7 @@ nn_model.add(tf.keras.layers.Dense(units=len(X.columns) * 2, activation = "relu"
 nn_model.add(tf.keras.layers.Dense(units=1, activation="linear"))
 nn_model.summary()
 
-Model: "sequential"
+#Model: "sequential"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -67,8 +67,7 @@ r2_score(y_train, y_train_pred)
 r2_score(y_test, y_test_pred)
 0.6703319673070454
 
-# Regression relationship with Cohesion data
-
+## Regression relationship with Cohesion data
 ![](1st_regression_scatter_plot.png)
 
 
