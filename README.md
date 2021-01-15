@@ -1,5 +1,9 @@
 
 # Scratching the surface of social cohesion
+
+DASHBOARD
+Tableau Animation - 2006 to 2020 data 
+https://public.tableau.com/profile/tsedey.aragie#!/vizhome/DataViz_fragilestateindex/C-indicators
  
 ## Purpose: This data serves Economists, Government agencies and Non-governmental agencies both within the country and outside as a baseline for level of risk.  Without this kind of data governments may have a delayed response to the urgent needs of their nation. This is also a useful resource to organizations that provide intervention services both within their country and internationally. It’s especially important to predict potential volatility.
 
@@ -166,9 +170,55 @@ r2_score(y_test, y_test_pred)
 #scatter plot
 ![](scatter_plot_C3.png)
 
-DASHBOARD
-Tableau Animation - 2006 to 2020 data 
-https://public.tableau.com/profile/tsedey.aragie#!/vizhome/DataViz_fragilestateindex/C-indicators
+deep_model = tf.keras.models.Sequential()
+deep_model.add(tf.keras.layers.Dense(units=len(X.columns) *2, activation = 'relu', input_dim = len(X.columns)))
+deep_model.add(tf.keras.layers.Dense(units=len(X.columns) *2, activation = 'relu'))
+deep_model.add(tf.keras.layers.Dense(units=1, activation="linear"))
+deep_model.add(tf.keras.layers.Dense(units=1, activation="linear"))
+deep_model.summary()
+
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_2 (Dense)              (None, 24)                312       
+_________________________________________________________________
+dense_3 (Dense)              (None, 24)                600       
+_________________________________________________________________
+dense_4 (Dense)              (None, 1)                 25        
+_________________________________________________________________
+dense_5 (Dense)              (None, 1)                 2         
+=================================================================
+Total params: 939
+Trainable params: 939
+Non-trainable params: 0
+
+deep_model.compile(loss="mean_squared_error", optimizer="adam")
+deep_model.fit(X_train_scaled, np.asarray(y_train), epochs=100)
+
+Epoch 100/100
+125/125 [==============================] - 0s 788us/step - loss: 0.9291
+<tensorflow.python.keras.callbacks.History at 0x1965c55f550>
+
+y_train_pred = deep_model.predict(X_train_scaled)
+y_test_pred = deep_model.predict(X_test_scaled)
+r2_score(y_train, y_train_pred)
+0.780810083563843
+r2_score(y_test, y_test_pred)
+0.7732313855535856
+
+
+ols = linear_model.LinearRegression()
+ols.fit(X_train, y_train)
+
+# To calculate the p-values of beta coefficients: 
+print("coef_pval:\n", stats.coef_pval(ols, X_train, y_train))
+
+# to print summary table:
+print("\n=========== SUMMARY ===========")
+stats.summary(ols, X_train, y_train, X.columns)
+
+![](scatter_plot_C3.png)
 
 Challenges and Difficulties Encountered: The data was pretty clean but interpreting and finding the most influential and most correlated indicators took a little maneuvering. The Indicators that were most correlated were C3: Grievances, X1: External Intervention, C2: Factionalized Elites, S2: Refugees and IDPs, and P1: State Legitimacy. It would be interesting to compare a test and train sample for public documents in the languages of the countries being analyzed. 
 
