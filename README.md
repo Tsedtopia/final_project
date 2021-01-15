@@ -26,7 +26,7 @@ For the qualitative component, two separate teams of analysts independently cond
 Finally the three data streams are compared to see if they generate the same outcome, and triangulated to arrive at a reconciled score.
 The methodology was pretty consistent for each year, beginning with 147 countries in 2006 and expanding to a total of 178 countries on their current list.
 
-##Extracting, Transforming, and Loading
+#Extracting, Transforming, and Loading
 
 The data sheets provided were organized by year and the first python notebook was based on the fsi-2020 excell data.  However, I merged the years and created an excell sheet that compiled all years 2006 - 2020
 
