@@ -70,7 +70,7 @@ nn_model.add(tf.keras.layers.Dense(units=len(X.columns) * 2, activation = "relu"
 nn_model.add(tf.keras.layers.Dense(units=1, activation="linear"))
 nn_model.summary()
 
-#Model: "sequential"
+# Model: "sequential"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
