@@ -26,19 +26,67 @@ For the qualitative component, two separate teams of analysts independently cond
 Finally the three data streams are compared to see if they generate the same outcome, and triangulated to arrive at a reconciled score.
 The methodology was pretty consistent for each year, beginning with 147 countries in 2006 and expanding to a total of 178 countries on their current list.
 
+##Extracting, Transforming, and Loading
+
+Create numeric_columns variables
+X = df.drop(['Country', 'Year','Total', 'Rank', 'C2: Factionalized Elites'], axis=1)
+X 
+
+scaler = MinMaxScaler()
+scaler.fit(X_train)
+X_train_scaled = scaler.transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+nn_model = tf.keras.models.Sequential()
+nn_model.add(tf.keras.layers.Dense(units=len(X.columns) * 2, activation = "relu", input_dim = len(X.columns)))
+nn_model.add(tf.keras.layers.Dense(units=1, activation="linear"))
+nn_model.summary()
+
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 24)                312       
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 25        
+=================================================================
+Total params: 337
+Trainable params: 337
+
+nn_model.compile(loss="mean_squared_error", optimizer="adam")
+nn_model.fit(X_train_scaled, np.asarray(y_train), epochs=100)
+Epoch 100/100
+5/5 [==============================] - 0s 571us/step - loss: 1.4916
+<tensorflow.python.keras.callbacks.History at 0x259f49e2400>
+
+y_train_pred = nn_model.predict(X_train_scaled)
+y_test_pred = nn_model.predict(X_test_scaled)
+r2_score(y_train, y_train_pred)
+0.7520758614637557
+
+r2_score(y_test, y_test_pred)
+0.6703319673070454
+
+# Regression relationship with Cohesion data
+
+![](1st_regression_scatter_plot.png)
+
+
 ## My testing method: Supervised ML, Regression & Linear Regression. 
 Keras sequential, nn-model, deep-model, and linear regression
-●	Results for target metric Fractionalized Elites
+Results for target metric Fractionalized Elites (primary target metric)
 ○	Nn model: R² value for y_train = .76 and y_test = .66
 ○	Deep model: R² value for y_train = .80 and y_test .70
-●	The results were slightly varied due to the nature of the algorithm but the accuracy scores are around 82% across different indicators. 
+The results were slightly varied due to the nature of the algorithm but the average accuracy score across different indicators is 82%. 
 P-value – testing the null hypothesis
 
 ![](p-value_outcome_sample.png)
 
 Libaries: Pandas, Numpy, Tensorflow, Sklearn (preprocessing, model_slection, metrics, linear model, and matplotlib.
 
-Tableau Animation - 
+
+DASHBOARD
+Tableau Animation - 2006 to 2020 data 
 https://public.tableau.com/profile/tsedey.aragie#!/vizhome/DataViz_fragilestateindex/C-indicators
 
 Challenges and Difficulties Encountered: The data was pretty clean but interpreting and finding the most influential and most correlated indicators took a little maneuvering. The Indicators that were most correlated were C3: Grievances, X1: External Intervention, C2: Factionalized Elites, S2: Refugees and IDPs, and P1: State Legitimacy. It would be interesting to compare a test and train sample for public documents in the languages of the countries being analyzed. 
