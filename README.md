@@ -52,7 +52,9 @@ Social Cohesion defined - the absence of polarization and division. 'Stable' or 
 Which indicators are most correlated?
 Are Countries with a low rating of E1: Economic Decline & Poverty likely to have minimal grievances and human rights violations?
 
-# Extracting, Transforming, and Loading
+# Extracting, Transforming, and Loading (I have multiple Python Notebooks) 
+
+Social_cohesion_2020_Pvalue
 
 The data sheets provided were organized by year and the first python notebook was based on the fsi-2020 excell data.  However, I merged the years and created an excell sheet that compiled all years 2006 - 2020
 
@@ -118,6 +120,21 @@ X1: External Intervention
 
 Libaries: Pandas, Numpy, Tensorflow, Sklearn (preprocessing, model_slection, metrics, linear model, and matplotlib.
 
+social_cohesion_C3
+#Create category_columns and numeric_columns variables
+X = df.drop(['Country', 'Rank','Year','Total', 'C3: Group Grievance'], axis=1)
+X 
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=60)
+
+scaler = MinMaxScaler()
+scaler.fit(X_train)
+X_train_scaled = scaler.transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+X_train.head()
+
+![](train_head.png)
 
 DASHBOARD
 Tableau Animation - 2006 to 2020 data 
