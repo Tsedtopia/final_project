@@ -3,7 +3,7 @@
 
 DASHBOARD
 Tableau Animation - 2006 to 2020 data 
-https://public.tableau.com/profile/tsedey.aragie#!/vizhome/DataViz_fragilestateindex/C-indicators
+https://public.tableau.com/profile/tsedey.aragie#!/vizhome/AnimationbasedonP-valuecorrelations/AnibasedonP-valuecorrelation?publish=yes
  
 ## Purpose: This data serves Economists, Government agencies and Non-governmental agencies both within the country and outside as a baseline for level of risk.  Without this kind of data governments may have a delayed response to the urgent needs of their nation. This is also a useful resource to organizations that provide intervention services both within their country and internationally. It’s especially important to predict potential volatility.
 
